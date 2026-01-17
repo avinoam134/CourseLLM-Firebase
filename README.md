@@ -30,7 +30,7 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
 # Feature Flags
 NEXT_PUBLIC_USE_FIREBASE_EMULATOR=false
 
-🏃‍♂️ How to Run
+# How to Run
 You can run the application in two modes: Live (Connected to Cloud) or Local (Emulators).
 
 # Option A: Live Firebase 
@@ -61,7 +61,7 @@ npm run dev:emulator
 * URL: http://localhost:9002
 
 * Emulator UI: http://localhost:4000 (View Firestore/Auth data here)
-
+**notice that the authentication usage needs sometimes a refresh to work**
 # Login & Roles
 The application supports Student and Teacher roles.
 
