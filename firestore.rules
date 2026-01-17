@@ -1,3 +1,22 @@
+/**
+ * @fileoverview Firestore Security Rules for the application.
+ *
+ * Core Philosophy:
+ * This ruleset enforces a strict user-ownership model, ensuring that users (teachers and students) can only access their own data.
+ *
+ * Data Structure:
+ * The Firestore data is organized hierarchically, with data nested under user-specific paths (e.g., /teachers/{teacherId}, /students/{studentId}).
+ * Each teacher has courses, materials, learning objectives, and learning skills.
+ * Each student has learning trajectories, chat messages, assessments, and usage reports.
+ *
+ * Key Security Decisions:
+ * - User listing is disallowed to prevent unauthorized access to user data.
+ * - All write operations are protected by authorization checks based on path-based ownership.
+ * - Data validation is relaxed to allow for rapid prototyping but critical relational integrity checks are enforced.
+ *
+ * Denormalization for Authorization:
+ * The data structure is explicitly designed to avoid `get()` calls in security rules. Ownership is derived from the path.
+ */
 rules_version = '2';
 
 service cloud.firestore {
