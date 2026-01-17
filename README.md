@@ -4,7 +4,14 @@ This repository contains the `file-managment-ui-crud-llmexp` branch featuring th
 
 ## 📋 Prerequisites
 
-* Node.js 18+
+* Node.js 18+ 
+make sure you run:
+```bash
+nvm install 20
+```
+```bash
+nvm use 20
+```
 * npm (pnpm/yarn/nx are **not** required)
 
 ## 🚀 Getting Started
@@ -81,6 +88,14 @@ We use Jest for unit tests and Playwright for E2E testing.
 npm run test
 ```
 * End-to-End (E2E) Tests:
+make sure that in .env.local:
+ENABLE_TEST_AUTH=true
+and you set FIREBASE_SERVICE_ACCOUNT_JSON
+```bash
+npx playwright install
+```
+```bash
+npx playwright install --with-deps```
 ```bash
 npm run test:e2e
 ```
